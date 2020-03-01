@@ -3,6 +3,7 @@ const fakeNames = require('./fakenames.json');
 function generateTrie(fakeFullNames) {
   const root = { value: '' }
   fakeFullNames.forEach((fullName, fullNameIndex) => {
+    fullName = fullName.toLowerCase()
     if (!root[fullName[0]]) { root[fullName[0]] = {} }
 
     let currentNode = root[fullName[0]];
@@ -20,6 +21,6 @@ function generateTrie(fakeFullNames) {
   return root;
 }
 
-const usersTrie = generateTrie(fakeNames.slice(0, 1000000));
+const usersTrie = generateTrie(fakeNames.slice(0, 200000));
 
 module.exports = usersTrie;

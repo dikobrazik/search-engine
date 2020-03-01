@@ -28,4 +28,4 @@ function findWordEntry(trie, word) {
   return entries
 }
 
-module.exports = (word) => findWordEntry(usersTrie, word).slice(0, 10);
+module.exports = (word) => findWordEntry(usersTrie, word.toLowerCase()).slice(0, 10);
